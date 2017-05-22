@@ -24,7 +24,14 @@ function checkDate(aDate) {
 };
 
 function timeStampe (aDate) {
-    var date = checkDate(aDate);
+    //console.log(aDate);
+    var unixtime = Number(aDate);
+    if (unixtime) var date = checkDate(unixtime);
+    else var date = checkDate(aDate);
+    
+    //var date = checkDate(aDate);
+    //console.log(date);
+
     result = {}
     if (!date) {
         result.unix = null;
